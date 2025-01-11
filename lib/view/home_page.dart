@@ -5,8 +5,9 @@ import 'package:mvc_pattern_with_getx/view/profile_page.dart';
 import 'package:mvc_pattern_with_getx/widgets/widget.dart';
 
 class HomePage extends StatelessWidget {
-  var controller = Get.put(loginPageController());
+  var controller = Get.put(LoginPageController());
   TextEditingController emailController = TextEditingController();
+  
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {

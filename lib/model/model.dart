@@ -1,5 +1,10 @@
-class userModel {
-  String userName;
+class userLoginModel {
+  String email;
   String userPassword;
-  userModel({required this.userName,required this.userPassword});
+  String imageUrl;
+
+  userLoginModel(
+      {required this.email,
+      required this.userPassword,
+      required this.imageUrl});
 }

@@ -1,10 +1,9 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:mvc_pattern_with_getx/controller/controller.dart';
 
 class TitleBar extends StatelessWidget {
   String pageTitle;
@@ -76,15 +75,16 @@ class myTextField extends StatelessWidget {
 }
 
 class myProfilePic extends StatelessWidget {
+  LoginPageController controller = Get.put(LoginPageController());
   double radius;
-  ImageProvider imageURL;
-  myProfilePic({super.key,required this.radius,required this.imageURL});
+  String? imageURL;
+  myProfilePic({super.key, required this.radius, required this.imageURL});
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: Colors.pink.shade100,
+      // backgroundColor: Colors.pink.shade100,
       radius: radius,
-      backgroundImage: imageURL,
+      backgroundImage: NetworkImage(imageURL!),
     );
   }
 }
